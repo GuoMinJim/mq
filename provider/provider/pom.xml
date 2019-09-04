@@ -14,11 +14,16 @@
 	<name>provider</name>
 	<description>Demo project for Spring Boot</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
+  </build>
 
-	<dependencies>
+  <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -46,29 +51,44 @@
 			<groupId>org.apache.tomcat</groupId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
+    <dependency>
+      <artifactId>dubbo</artifactId>
+      <groupId>org.apache.dubbo</groupId>
+      <version>${dubbo.version}</version>
+    </dependency>
 		<dependency>
-			<groupId>com.alibaba</groupId>
-			<artifactId>dubbo</artifactId>
-			<version>2.6.3</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
-		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>3.4.12</version>
+      <artifactId>dubbo-dependencies-zookeeper</artifactId>
+      <groupId>org.apache.dubbo</groupId>
+      <version>${dubbo.version}</version>
 			<type>pom</type>
 		</dependency>
 
-	</dependencies>
+    <!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter -->
+    <dependency>
+      <artifactId>mapper-spring-boot-starter</artifactId>
+      <groupId>tk.mybatis</groupId>
+      <version>2.1.5</version>
+    </dependency>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+
+    <!--		<dependency>-->
+    <!--			<artifactId>beiming-framework</artifactId>-->
+    <!--			<groupId>com.beiming.framework</groupId>-->
+    <!--			<scope>import</scope>-->
+    <!--			<type>pom</type>-->
+    <!--			<version>1.0.2-SNAPSHOT</version>-->
+    <!--		</dependency>-->
+    <!--		<dependency>-->
+    <!--			<artifactId>framework</artifactId>-->
+    <!--			<groupId>com.beiming.framework</groupId>-->
+    <!--			<version>1.0.2-SNAPSHOT</version>-->
+    <!--		</dependency>-->
+
+  </dependencies>
+
+  <properties>
+    <dubbo.version>2.7.3</dubbo.version>
+    <java.version>1.8</java.version>
+  </properties>
 
 </project>

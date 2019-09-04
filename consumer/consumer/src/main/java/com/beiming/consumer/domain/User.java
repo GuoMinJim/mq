@@ -1,7 +1,9 @@
 package com.beiming.consumer.domain;
 
 
-public class User {
+import java.io.Serializable;
+
+public class User implements Serializable {
 
   private Integer id;
 
@@ -11,6 +13,11 @@ public class User {
 
   public User(Integer id, String name, String password) {
     this.id = id;
+    this.name = name;
+    this.password = password;
+  }
+
+  public User(String name, String password) {
     this.name = name;
     this.password = password;
   }

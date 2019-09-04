@@ -24,19 +24,21 @@ spring:
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  type-aliases-package: com.beiming.fxh.service.domain
+  type-aliases-package: com.beiming.consumer.domain
   mapper-locations: classpath:mapper/*.xml
 mapper:
   enumAsSimpleType: true
-dubbo:
-  application:
-    name: demo_service
-  registry:
-    protocol: zookeeper
-    address: 47.106.248.229:2181
-  protocol:
-    name: dubbo
-    port: 23871
+#dubbo:
+##  application:
+##    name: consumer
+#  registry:
+#    protocol: zookeeper
+#    address: 47.106.248.229:2181
+#  protocol:
+#    name: dubbo
+#    port: 23870
+
+
 rocketmq:
   name-server: 47.106.248.229:9876
   producer:
@@ -44,6 +46,13 @@ rocketmq:
   consumer:
     group: smsConsumerGroup
   topic: smsTopic
+
+
+#dubbo:
+#  appName: dubbo-annotation-consumer
+
+
+Platform: provider
 
 
 

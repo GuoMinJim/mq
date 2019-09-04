@@ -14,11 +14,16 @@
 	<name>consumer</name>
 	<description>Demo project for Spring Boot</description>
 
-	<properties>
-		<java.version>1.8</java.version>
-	</properties>
+  <build>
+    <plugins>
+      <plugin>
+        <artifactId>spring-boot-maven-plugin</artifactId>
+        <groupId>org.springframework.boot</groupId>
+      </plugin>
+    </plugins>
+  </build>
 
-	<dependencies>
+  <dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
@@ -45,37 +50,44 @@
 			<groupId>org.apache.tomcat</groupId>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/com.alibaba/dubbo -->
-		<dependency>
-			<groupId>com.alibaba</groupId>
+    <!--		&lt;!&ndash; https://mvnrepository.com/artifact/com.alibaba/dubbo &ndash;&gt;-->
+    <!--		<dependency>-->
+    <!--			<groupId>com.alibaba</groupId>-->
+    <!--			<artifactId>dubbo</artifactId>-->
+    <!--			<version>2.6.3</version>-->
+    <!--		</dependency>-->
+    <!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
+
+    <!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter -->
+    <dependency>
+      <artifactId>mapper-spring-boot-starter</artifactId>
+      <groupId>tk.mybatis</groupId>
+      <version>2.1.5</version>
+    </dependency>
+
+
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
 			<artifactId>dubbo</artifactId>
-			<version>2.6.3</version>
+      <version>${dubbo.version}</version>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.apache.zookeeper/zookeeper -->
 		<dependency>
-			<groupId>org.apache.zookeeper</groupId>
-			<artifactId>zookeeper</artifactId>
-			<version>3.4.12</version>
+      <artifactId>dubbo-dependencies-zookeeper</artifactId>
+      <groupId>org.apache.dubbo</groupId>
+      <version>${dubbo.version}</version>
 			<type>pom</type>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/tk.mybatis/mapper-spring-boot-starter -->
 		<dependency>
-			<groupId>tk.mybatis</groupId>
-			<artifactId>mapper-spring-boot-starter</artifactId>
-			<version>2.1.5</version>
+      <artifactId>provider</artifactId>
+      <groupId>com.beiming</groupId>
+      <version>0.0.1-SNAPSHOT</version>
 		</dependency>
-
-
 	</dependencies>
 
-	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
-	</build>
+  <properties>
+    <dubbo.version>2.7.3</dubbo.version>
+    <java.version>1.8</java.version>
+  </properties>
 
 </project>
